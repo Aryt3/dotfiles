@@ -1,0 +1,73 @@
+* {
+    all: unset;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+window#waybar {
+    background-color: rgba(182, 182, 180, 0.5);
+    border-bottom: 1px solid #fff;
+}
+
+#clock {
+    font-family: Open Sans SemiBold;
+    padding: 0px 5px 0px 5px;
+    margin: 4px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    background-color: rgba(141, 141, 141, 1);
+    border: 1px solid rgba(140, 140, 140, 1);
+    border-radius: 5px;
+}
+
+#cpu {
+    font-family: Open Sans SemiBold;
+    padding: 0px 5px 0px 5px;
+    margin: 4px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    background-color: rgba(141, 141, 141, 1);
+    border: 1px solid rgba(140, 140, 140, 1);
+    border-radius: 5px;
+}
+
+#network {
+    font-family: Open Sans SemiBold;
+    padding: 0px 5px 0px 5px;
+    margin: 4px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    background-color: rgba(141, 141, 141, 1);
+    border: 1px solid rgba(140, 140, 140, 1);
+    border-radius: 5px;
+}
+
+#memory {
+    font-family: Open Sans SemiBold;
+    padding: 0px 5px 0px 5px;
+    margin: 4px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    background-color: rgba(141, 141, 141, 1);
+    border: 1px solid rgba(140, 140, 140, 1);
+    border-radius: 5px;
+}
+
+#workspaces {
+	font-family: Font Awesome;
+    padding: 2px 4px;
+}
+
+#workspaces button {
+    color: #D3CCC5;
+    border: none;
+    padding: 2px 8px;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.0);
+    color: #938E89;
+}

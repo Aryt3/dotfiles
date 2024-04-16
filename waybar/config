@@ -1,0 +1,54 @@
+{
+    "layer": "bottom",
+    "mode": "dock",
+    "fixed-center": true,
+    "position": "top",
+    "spacing": 0,
+    "margin": "0px 0px 0px 0px",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu", "memory", "network", "battery"],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+          "urgent": "",
+          "active": "",
+          "default": ""
+        }
+	},
+
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M:%S}",
+        "format-alt": "{:%Y-%m-%d %H:%M:%S}",
+        "tooltip": false,
+        "interval": 1
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false,
+        "interval": 5
+    },
+    "memory": {
+        "format": " {}%",
+        "tooltip": false,
+        "interval": 5
+    },
+    "network": {
+        "format-wifi": "{ifname}: {essid} LQ-{signalStrength}%",
+        "format-ethernet": "{ifname}: {bandwidthUpBytes} - {bandwidthDownBytes}",
+        "format-disconnected": "dsc",
+        "interval": 2,
+        "tooltip": false
+    },
+	"battery": {
+        "bat": "BAT0",
+        "format": "dsc {capacity}%",
+        "format-charging": "chr {capacity}%",
+        "format-full": "chrgd",
+        "format-alt": "{capacity}%",
+        "tooltip": false
+    }
+}

@@ -1,2 +1,4 @@
 # .config
-Personal ~./config files
+
+> [!NOTE]
+> Personal `~./config/` files.
