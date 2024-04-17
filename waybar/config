@@ -5,17 +5,28 @@
     "position": "top",
     "spacing": 0,
     "margin": "0px 0px 0px 0px",
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces", "network"],
     "modules-center": ["clock"],
-    "modules-right": ["cpu", "memory", "network", "battery"],
+    "modules-right": ["cpu", "memory", "battery"],
 
     "hyprland/workspaces": {
-        "format": "{icon}",
-        "on-click": "activate",
+        "disable-scroll": false,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}",
         "format-icons": {
-          "urgent": "",
-          "active": "",
-          "default": ""
+            "0": "0",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "active": "",
+            "default": ""
         }
 	},
 
@@ -27,28 +38,36 @@
     },
 
     "cpu": {
-        "format": " {usage}%",
+        "format": "{usage}% ",
         "tooltip": false,
         "interval": 5
     },
+    
     "memory": {
-        "format": " {}%",
+        "format": "{}% ",
         "tooltip": false,
         "interval": 5
     },
+
     "network": {
-        "format-wifi": "{ifname}: {essid} LQ-{signalStrength}%",
-        "format-ethernet": "{ifname}: {bandwidthUpBytes} - {bandwidthDownBytes}",
-        "format-disconnected": "dsc",
-        "interval": 2,
-        "tooltip": false
+        "format-wifi": "{essid} ({signalStrength}%)  ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
-	"battery": {
-        "bat": "BAT0",
-        "format": "dsc {capacity}%",
-        "format-charging": "chr {capacity}%",
-        "format-full": "chrgd",
-        "format-alt": "{capacity}%",
-        "tooltip": false
+    
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
     }
 }
