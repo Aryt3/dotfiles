@@ -1,92 +1,157 @@
 * {
-    all: unset;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    font-family: sans-serif;
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
     font-size: 16px;
+    min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(182, 182, 180, 0.5);
-    border-bottom: 1px solid #8c8c8c;
+    background: rgba(21, 18, 27, 0);
+    color: #cdd6f4;
 }
 
 tooltip {
-    background: rgba(0, 0, 0, 0.9);
-    border: 1px solid rgba(100, 114, 125, 0.5);
+    background: #1e1e2e;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #11111b;
 }
 
-#custom-pacman,
+#workspaces button {
+    padding: 5px;
+    color: #313244;
+    margin-right: 5px;
+}
+
+#workspaces button.active {
+    color: #a6adc8;
+}
+
+#workspaces button.focused {
+    color: #a6adc8;
+    background: #eba0ac;
+    border-radius: 10px;
+}
+
+#workspaces button.urgent {
+    color: #11111b;
+    background: #a6e3a1;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    background: #11111b;
+    color: #cdd6f4;
+    border-radius: 10px;
+}
+
+#custom-power_profile,
+#custom-weather,
+#window,
 #clock,
-#cpu,
-#memory,
-#network,
-#workspaces,
 #battery,
 #pulseaudio,
+#network,
+#bluetooth,
+#temperature,
+#workspaces,
+#tray,
+#backlight,
 #custom-pacman,
-#keyboard-state,
-#bluetooth {
-    font-family: Open Sans SemiBold;
-    padding: 2px 5px 2px 5px;
-    margin-left: 2px;
-    margin-right: 2px;
-}
-
-/* Cl0ck design */
-#clock {
-    letter-spacing: 1px;
-    border-bottom: 1px solid #f0b1fd;
-    color: #f0b1fd;
-}
-
-/* CPU design */
+#memory,
 #cpu {
-    border-bottom: 1px solid #5be494;
-    color: #5be494;
+    background: #1e1e2e;
+    opacity: 0.8;
+    padding: 0px 10px;
+    margin: 3px 0px;
+    margin-top: 10px;
+    border: 1px solid #181825;
 }
 
-/* M3m0ry design */
+#custom-pacman {
+    padding-right: 12px;
+    color: #61aae6;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+#tray {
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+#cpu {
+    margin-right: 10px;
+    border-radius: 10px;
+    color: #cdd6f4;
+}
+
 #memory {
-    font-family: Open Sans SemiBold;
-    border-bottom: 1px solid #e7ff7f;
-    color: #e7ff7f;
+    margin-right: 10px;
+    border-radius: 10px;
+    color: #a6e3a1;
 }
 
-/* N3tw0rk design */
+#workspaces {
+    background: #1e1e2e;
+    border-radius: 10px;
+    margin-left: 10px;
+    padding-right: 0px;
+    padding-left: 5px;
+}
+
+#custom-power_profile {
+    color: #a6e3a1;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#window {
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+#clock {
+    color: #fab387;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 10px;
+    border-right: 0px;
+    padding-right: 12px;
+}
+
 #network {
-    border-bottom: 1px solid #fff;
-    color: #51c774;
-}
-#network.disconnected {
-    background-color: #f53c3c;
-}
-
-/* W0rksp4c3s design */
-#workspaces button {
-    padding: 0 5px 0 5px;
-    color: #fff;
-    margin-right: 4px;
-}
-#workspaces button:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-#workspaces button.active {
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid #fff;
-    font-weight: 600;
-}
-#workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-#workspaces button.urgent {
-    background-color: #eb4d4b;
+    color: #f9e2af;
+    border-radius: 10px 0px 0px 10px;
+    border-left: 0px;
+    border-right: 0px;
 }
 
-/* B4tt3ry design */
+#bluetooth {
+    color: #89b4fa;
+    border-radius: 0px 10px 10px 0px;
+    margin-right: 10px
+} 
+
+#pulseaudio {
+    color: #89b4fa;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#pulseaudio.microphone {
+    color: #cba6f7;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px 10px 10px 0px;
+    margin-right: 10px;
+}
+
+/*
 #battery {
     border-bottom: 1px solid #fff;
     color: #fff;
@@ -104,7 +169,8 @@ tooltip {
 #battery.good {
     border-bottom: #2bb966;
 }
-/* Using steps() instead of linear as a timing function to limit cpu usage */
+
+Using steps() instead of linear as a timing function to limit cpu usage
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
     color: #fff;
@@ -114,27 +180,10 @@ tooltip {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+*/
 
-/* Aud10 design */
-#pulseaudio {
-    border-bottom: 1px solid #252525;
-    color: #252525;
+#custom-weather {
+    border-radius: 0px 10px 10px 0px;
+    border-right: 0px;
+    margin-left: 0px;
 }
-
-/* Package Update Notifications */
-#custom-pacman {
-    padding-right: 10px;
-    color: #61aae6;
-    border-bottom: 1px solid #61aae6;
-}
-
-/* Status of Caps & Nums-Lock */
-#keyboard-state {
-    border-bottom: 1px solid #fff;
-}
-
-#bluetooth {
-    color: #008bfd;
-    border-bottom: 1px solid #008bfd;
-}
-
